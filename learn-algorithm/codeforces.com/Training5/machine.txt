@@ -1,0 +1,10 @@
+F[j] thời gian làm việc dài nhất kết thúc tại thời điểm j
+
+F[t_1] = t1 - s1
+F[t_2] = t2 - s2
+...
+F[t_n] = t_n - s_n
+
+F'[j] là độ dài của công việc trước thời điểm j
+F'[j] này là hàm tích lũy được theo thời gian để combine vs các thành phần
+

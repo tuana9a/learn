@@ -1,0 +1,9 @@
+[submodule "learn-java"]
+	path = learn-java
+	url = git@github.com:tuana9a/learn-java.git
+[submodule "learn-ansible"]
+	path = learn-ansible
+	url = git@github.com:tuana9a/learn-ansible.git
+[submodule "learn-terraform"]
+	path = learn-terraform
+	url = git@github.com:tuana9a/learn-terraform.git
