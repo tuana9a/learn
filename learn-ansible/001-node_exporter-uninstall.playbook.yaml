@@ -1,0 +1,21 @@
+---
+- name: Uninstall node_exporter
+  hosts: node_exporter
+  tasks:
+    - name: Stop and disable service
+      become: true
+      ansible.builtin.service:
+        name: node_exporter
+        state: stopped
+        enabled: false
+
+    - name: Remove service file
+      become: true
+      ansible.builtin.file:
+        path: /etc/systemd/system/node_exporter.service
+        state: "absent"
+
+    - name: Run systemctl daemon-reload
+      become: true
+      ansible.builtin.systemd:
+        daemon_reload: true

@@ -1,0 +1,22 @@
+---
+- name: Install and configure aws cli
+  hosts: awscliv2
+  tasks:
+    - name: Install unzip
+      become: true
+      apt:
+        name: unzip
+        state: present
+    - name: Download aws cli
+      get_url:
+        url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+        dest: /tmp/awscliv2.zip
+    - name: Unzip
+      unarchive:
+        src: /tmp/awscliv2.zip
+        dest: /tmp
+        remote_src: true
+    - name: Install
+      become: true
+      # add -u flag to update if there are already installed aws clis
+      shell: /tmp/aws/install -u > /tmp/install.log

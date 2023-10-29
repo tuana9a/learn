@@ -1,0 +1,16 @@
+# oauth
+oauth.google.auth_url=
+oauth.google.app_id=
+oauth.google.app_secret=
+oauth.google.get_token_url=
+oauth.google.get_user_info_url=
+oauth.google.redirect_url=
+# both jwt and cookie expire in 3h
+security.jwt.expire=10800000
+security.jwt.secret=secret
+security.cookie.expire=10800
+security.secrets=your_secret1,your_secret2
+# database
+database.url=jdbc:mysql://127.0.0.1:3306/learn_java_servlet
+database.username=root
+database.password=password

@@ -1,0 +1,8 @@
+all: # group name
+  hosts:
+    192.168.56.4: # host ip, domain name, ...
+      ansible_user: tuana9a # ansible variable
+      my_custom_variable: "tuan dep trai" # my custom variable per host
+    192.168.56.5:
+      ansible_user: vagrant
+      my_custom_variable: "no you don't"
