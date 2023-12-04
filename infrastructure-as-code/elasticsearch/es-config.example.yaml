@@ -1,0 +1,25 @@
+cluster.initial_master_nodes:
+- 172.29.0.11
+- 172.29.0.12
+- 172.29.0.13
+cluster.name: es-cluster
+discovery.seed_hosts:
+- 172.29.0.11
+- 172.29.0.12
+- 172.29.0.13
+network.bind_host: 0.0.0.0
+node.name: es
+transport.publish_host: 0.0.0.0
+
+# @tuana9a ssl
+xpack.license.self_generated.type: basic
+xpack.security.enabled: true
+xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/certificates/server.crt
+xpack.security.http.ssl.certificate_authorities: /usr/share/elasticsearch/config/certificates/rootCA.crt
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.key: /usr/share/elasticsearch/config/certificates/server.key
+xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/certificates/server.crt
+xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/certificates/rootCA.crt
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/certificates/server.key
+xpack.security.transport.ssl.verification_mode: certificate

@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./confs/es01.yaml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./confs/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
+      - ./certs/:/usr/share/elasticsearch/config/certificates
+    networks:
+      net1:
+        ipv4_address: 172.29.0.11
+
+  es02:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./confs/es02.yaml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./confs/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
+      - ./certs/:/usr/share/elasticsearch/config/certificates
+    networks:
+      net1:
+        ipv4_address: 172.29.0.12
+
+  es03:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.10
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - ./confs/es03.yaml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./confs/elasticsearch.keystore:/usr/share/elasticsearch/config/elasticsearch.keystore
+      - ./certs/:/usr/share/elasticsearch/config/certificates
+    networks:
+      net1:
+        ipv4_address: 172.29.0.13
+
+networks:
+  net1:
+    ipam:
+      config:
+        - subnet: 172.29.0.0/16

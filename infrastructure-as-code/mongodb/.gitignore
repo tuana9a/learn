@@ -1,0 +1,4 @@
+data/
+*.conf
+dump/
+docker-compose.yaml

@@ -1,0 +1,21 @@
+version: "3.6"
+
+services:
+  gitlab:
+    image: "gitlab/gitlab-ee:14.9.5-ee.0"
+    hostname: "gitlab.tuana9a.com"
+    container_name: "gitlab-14.9.5"
+    networks:
+      net1:
+        ipv4_address: 172.14.0.2
+    volumes:
+      - "/etc/gitlab:/etc/gitlab"
+      - "/var/log/gitlab:/var/log/gitlab"
+      - "/var/opt/gitlab:/var/opt/gitlab"
+    shm_size: "256m"
+
+networks:
+  net1:
+    ipam:
+      config:
+        - subnet: 172.14.0.0/16

@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: redis:6.2
+    network_mode: host
+    restart: unless-stopped
+    volumes:
+      - ./conf.d/:/usr/local/etc/redis/
+      - ./data/:/data/
+    command: ["redis-server", "/usr/local/etc/redis/redis.conf"]
