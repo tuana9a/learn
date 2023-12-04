@@ -8,7 +8,4 @@ receivers:
   - name: "telegram"
     telegram_configs:
       - bot_token: "xxxxxxxxxx:yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
-        # personal
         chat_id: 1111111111
-        # group
-        # chat_id: -111111111

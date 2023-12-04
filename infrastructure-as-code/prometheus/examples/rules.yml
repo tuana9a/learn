@@ -8,6 +8,7 @@ groups:
           severity: warning
         annotations:
           description: High ram usage ({{ $value | printf "%.2f" }}% left)
+
       - alert: NodeDown
         expr: up == 0
         for: 5m
@@ -15,6 +16,7 @@ groups:
           severity: warning
         annotations:
           description: "{{ $labels.instance }} is down"
+
       - alert: LowDiskSpace
         expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} * 100 < 20
         for: 5m

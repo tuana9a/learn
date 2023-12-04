@@ -5,3 +5,4 @@ rules.yaml
 alertmanager.yml
 alertmanager.yaml
 data/
+!examples/*

@@ -3,13 +3,10 @@
 ## setup
 
 ```bash
-mkdir grafana-data
-mkdir prometheus-data
-```
-
-```bash
-chmod 777 grafana-data
-chmod 777 prometheus-data
+mkdir -p data/grafana
+mkdir -p data/prometheus
+sudo chown 472:0 data/grafana # user:group for grafana
+sudo chown 65534:65534 data/prometheus # user:group for prometheus
 ```
 
 we need to create and set permissions because the default is `root:root` which cause permission denied error in container
