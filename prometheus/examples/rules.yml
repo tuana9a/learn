@@ -1,14 +1,6 @@
 groups:
   - name: AllInstances
     rules:
-      - alert: HighMemoryUsage
-        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 15
-        for: 5m
-        labels:
-          severity: warning
-        annotations:
-          description: High ram usage ({{ $value | printf "%.2f" }}% left)
-
       - alert: NodeDown
         expr: up == 0
         for: 5m
@@ -17,8 +9,34 @@ groups:
         annotations:
           description: "{{ $labels.instance }} is down"
 
+      # node_exporter
+      - alert: HighMemoryUsage
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          description: High ram usage ({{ $value | printf "%.2f" }}% left)
+
       - alert: LowDiskSpace
-        expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} * 100 < 20
+        expr: node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"} * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          description: Low disk space ({{ $value | printf "%.2f" }}% left)
+
+      # window_exporter
+      - alert: HighMemoryUsage
+        expr: windows_os_physical_memory_free_bytes{job=~"prometheus"} / windows_cs_physical_memory_bytes{job=~"prometheus"} * 100 < 15
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          description: High ram usage ({{ $value | printf "%.2f" }}% left)
+
+      - alert: LowDiskSpace
+        expr: windows_logical_disk_free_bytes{volume=~"C:"}/windows_logical_disk_size_bytes{volume=~"C:"} * 100 < 15
         for: 5m
         labels:
           severity: warning

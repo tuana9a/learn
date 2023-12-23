@@ -27,8 +27,7 @@ scrape_configs:
 
     static_configs:
       - targets:
-          - host1:9100
-          - host2:9100
+          - localhost:9100
 
   - job_name: "nginx-exporter"
 
@@ -37,4 +36,4 @@ scrape_configs:
 
     static_configs:
       - targets:
-          - host1:9113
+          - localhost:9113
