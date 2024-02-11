@@ -1,0 +1,54 @@
+{
+  "name": "tu9nioc",
+  "version": "1.1.1",
+  "description": "dependency injection for nodejs",
+  "scripts": {
+    "build": "tsc --declaration",
+    "build:watch": "tsc --watch --declaration",
+    "test": "jest tests",
+    "test:watch": "jest --watch tests"
+  },
+  "author": "Tuan Nguyen Minh",
+  "license": "GPL-3.0",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "devDependencies": {
+    "@jest/globals": "^27.5.1",
+    "@types/lodash": "^4.14.191",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint": "^8.26.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-config-xo": "^0.42.0",
+    "eslint-config-xo-typescript": "^0.53.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "27.5.1",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.8.4"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuana9a/tu9nioc.git"
+  },
+  "keywords": [
+    "dependency-injection",
+    "di",
+    "inversion-of-control",
+    "ioc"
+  ],
+  "bugs": {
+    "url": "https://github.com/tuana9a/tu9nioc/issues"
+  },
+  "homepage": "https://github.com/tuana9a/tu9nioc#readme",
+  "contributors": [
+    "Tuan Nguyen Minh (https://github.com/tuana9a)"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

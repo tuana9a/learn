@@ -1,0 +1,44 @@
+{
+  "name": "puppeteer-worker",
+  "version": "3.3.2",
+  "description": "Simple puppeteer-worker run job",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "build": "tsc --declaration",
+    "build:watch": "tsc --watch --declaration",
+    "test:watch": "jest --watch test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuana9a/puppeteer-worker.git"
+  },
+  "author": "Tuan Nguyen Minh",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tuana9a/puppeteer-worker/issues"
+  },
+  "homepage": "https://github.com/tuana9a/puppeteer-worker#readme",
+  "dependencies": {
+    "puppeteer-core": "^13.5.1",
+    "puppeteer-worker-job-builder": "^3.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/parser": "^5.47.1",
+    "eslint": "^8.13.0",
+    "jest": "27.5.1",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.8.4"
+  },
+  "keywords": [
+    "puppeteer-worker",
+    "puppeteer",
+    "worker",
+    "automation",
+    "selenium"
+  ],
+  "contributors": [
+    "Tuan Nguyen Minh (https://github.com/tuana9a)"
+  ]
+}
